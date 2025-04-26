@@ -9,6 +9,7 @@ return {
     },
     {
         "kyazdani42/nvim-tree.lua", -- File explorer
+        dependencies = { "nvim-tree/nvim-web-devicons" }, -- Icons for the tab bar
         config = function()
             require("nvim-tree").setup({
                 filesystem_watchers = {

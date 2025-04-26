@@ -11,24 +11,6 @@ return {
         end,
     },
     {
-        "williamboman/mason.nvim", -- LSP server manager
-        enabled = false,
-        build = ":MasonUpdate", -- Automatically update Mason registry
-        config = function()
-            require("mason").setup()
-        end,
-    },
-    {
-        "williamboman/mason-lspconfig.nvim", -- Bridge between Mason and lspconfig
-        enabled = false,
-        dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "clangd", "rust_analyzer" }, -- Automatically install these servers
-            })
-        end,
-    },
-    {
         "hrsh7th/nvim-cmp", -- Autocompletion plugin
         dependencies = {
             "hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
@@ -62,26 +44,10 @@ return {
     },
     {
         "neovim/nvim-lspconfig", -- LSP configurations
-        enabled = false,
+        enabled = enabled,
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-            -- Lua language server
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-                settings = {
-                    Lua = {
-                        runtime = { version = "LuaJIT" },
-                        diagnostics = { globals = { "vim" } },
-                        workspace = {
-                            library = vim.api.nvim_get_runtime_file("", true),
-                            checkThirdParty = false,
-                        },
-                        telemetry = { enable = false },
-                    },
-                },
-            })
 
             -- Python language server
             lspconfig.pyright.setup({

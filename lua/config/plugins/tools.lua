@@ -9,13 +9,6 @@ return {
         end,
     },
     {
-        "github/copilot.vim", -- GitHub Copilot
-        config = function()
-            vim.g.copilot_no_tab_map = true -- Disable default <Tab> mapping
-            vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-        end,
-    },
-    {
         "zbirenbaum/copilot.lua", -- Enhanced Copilot integration
         config = function()
             require("copilot").setup({
@@ -104,31 +97,8 @@ return {
         end,
     },
     {
-        "akinsho/toggleterm.nvim", -- Terminal integration
-        enabled = true,
-        priority = 1000,
-        version = "*",
-        config = function()
-            require("toggleterm").setup({
-                size = 20, -- Default terminal size
-                open_mapping = [[<C-\>]], -- Keybinding to toggle terminal
-                hide_numbers = true, -- Hide line numbers in terminal
-                shade_filetypes = {},
-                shade_terminals = true,
-                shading_factor = 2,
-                start_in_insert = true,
-                persist_size = true,
-                direction = "float", -- Options: 'vertical', 'horizontal', 'tab', 'float'
-                float_opts = {
-                    border = "curved", -- Border style for floating terminal
-                    winblend = 3,
-                },
-            })
-        end,
-    },
-    {
         "christoomey/vim-tmux-navigator", -- Seamless navigation between Tmux and Neovim
-        enabled = false,
+        enabled = true,
         lazy = false, -- Load immediately
     },
     {
@@ -145,22 +115,18 @@ return {
         end,
     },
     {
-        -- Which-key Extension
-        "folke/which-key.nvim",
+        "folke/which-key.nvim", -- Keybinding helper
+        enabled = true,
         event = "VeryLazy",
-        opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  },
-  keys = {
-    {
-      "<leader>/",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
-        },
+        opts = {},
+        keys = {
+            {
+                "<leader>/",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
         },
     },
 }
