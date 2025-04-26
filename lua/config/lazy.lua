@@ -18,4 +18,5 @@ require("lazy").setup({
     require("config.plugins.lsp"),
     require("config.plugins.git"),
     require("config.plugins.tools"),
+    require("config.plugins.lazygit"),
 })

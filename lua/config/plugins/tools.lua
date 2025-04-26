@@ -101,19 +101,33 @@ return {
         enabled = true,
         lazy = false, -- Load immediately
     },
-    {
-        "folke/edgy.nvim", -- Edge window manager
-        enabled = false,
-        optional = true,
-        opts = function(_, opts)
-            opts.right = opts.right or {}
-            table.insert(opts.right, {
-                ft = "copilot-chat",
-                title = "Copilot Chat",
-                size = { width = 50 },
-            })
-        end,
-    },
+
+{
+    "folke/edgy.nvim", -- Edge window manager
+    enabled = true, -- Enable edgy.nvim
+    optional = true,
+    opts = function(_, opts)
+        -- Add copilot-chat to the right section
+        opts.right = opts.right or {}
+        table.insert(opts.right, {
+            ft = "copilot-chat",
+            title = "Copilot Chat",
+            size = { width = 50 },
+        })
+
+        -- Add toggleterm to the bottom section
+        opts.bottom = opts.bottom or {}
+        table.insert(opts.bottom, {
+            ft = "toggleterm", -- Match toggleterm filetype
+            size = { height = 0.3 }, -- Set height as a fraction of the total window
+            filter = function(buf, win)
+                -- Exclude floating terminals
+                return not vim.api.nvim_win_get_config(win).relative
+            end,
+        })
+    end,
+},    
+    
     {
         "folke/which-key.nvim", -- Keybinding helper
         enabled = true,
@@ -128,5 +142,22 @@ return {
                 desc = "Buffer Local Keymaps (which-key)",
             },
         },
+    },
+    {
+        "akinsho/toggleterm.nvim", -- Terminal integration
+        version = "*",
+        config = function()
+            require("toggleterm").setup({
+                size = 10, -- Height of the terminal
+                open_mapping = [[<F12>]], -- Keybinding to toggle the terminal
+                direction = "horizontal", -- Open terminal at the bottom
+                shade_terminals = true, -- Dim the background of the terminal
+                persist_size = true, -- Remember terminal size
+            })
+
+            -- Keybindings for terminal management
+            vim.keymap.set("n", "<F12>", "<Cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+            vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+        end,
     },
 }

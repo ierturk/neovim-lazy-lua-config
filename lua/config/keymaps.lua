@@ -29,8 +29,12 @@ map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts) -- Go to the previous buff
 map("n", "<leader>bp", ":BufferLinePick<CR>", opts) -- Pick a buffer to switch to
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opts) -- Pick a buffer to close
 
+-- LazyGit
+map("n", "<leader>lg", ":LazyGit<CR>", opts) -- Open LazyGit
+
+
 -- ToggleTerm
 -- map("n", "<C-\tt>", ":ToggleTerm<CR>", opts) -- Toggle terminal
 -- map("t", "<leader>tt", [[<C-\><C-n>:ToggleTerm<CR>]], opts) -- Toggle terminal in terminal modei
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal
-vim.keymap.set("t", "<C-t>", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal
+-- vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal
+-- vim.keymap.set("t", "<C-t>", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal

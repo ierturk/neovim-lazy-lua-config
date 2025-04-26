@@ -38,6 +38,9 @@ return {
                     { name = "nvim_lsp" }, -- LSP suggestions
                     { name = "buffer" }, -- Buffer suggestions
                     { name = "path" }, -- Path suggestions
+                    { name = "nvim_lsp_signature_help" }, -- LSP signature help
+                    { name = "CopilotChat" }, -- CopilotChat source
+                    { name = "cmdline" }, -- Command-line source
                 }),
             })
         end,
