@@ -39,6 +39,7 @@ return {
         end,
       },
     },
+    priority = 1000, -- Ensure it loads first
     lazy = false,
     -----Instead of using `config`, you can use `opts` instead, if you'd like:
     -----@module "neo-tree"

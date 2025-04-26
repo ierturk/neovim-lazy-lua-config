@@ -59,7 +59,7 @@ return {
 
             -- C++ language server
             lspconfig.clangd.setup({
-                cmd = { "clangd" },
+                cmd = { "clangd17" },
                 filetypes = { "c", "cpp", "objc", "objcpp" },
                 root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
                 capabilities = capabilities,
