@@ -12,6 +12,7 @@ return {
     },
     {
         "williamboman/mason.nvim", -- LSP server manager
+        enabled = false,
         build = ":MasonUpdate", -- Automatically update Mason registry
         config = function()
             require("mason").setup()
@@ -19,6 +20,7 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim", -- Bridge between Mason and lspconfig
+        enabled = false,
         dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
         config = function()
             require("mason-lspconfig").setup({
@@ -60,6 +62,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig", -- LSP configurations
+        enabled = false,
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()

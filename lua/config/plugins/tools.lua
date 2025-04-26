@@ -105,6 +105,8 @@ return {
     },
     {
         "akinsho/toggleterm.nvim", -- Terminal integration
+        enabled = true,
+        priority = 1000,
         version = "*",
         config = function()
             require("toggleterm").setup({
@@ -126,10 +128,12 @@ return {
     },
     {
         "christoomey/vim-tmux-navigator", -- Seamless navigation between Tmux and Neovim
+        enabled = false,
         lazy = false, -- Load immediately
     },
     {
         "folke/edgy.nvim", -- Edge window manager
+        enabled = false,
         optional = true,
         opts = function(_, opts)
             opts.right = opts.right or {}
@@ -139,5 +143,24 @@ return {
                 size = { width = 50 },
             })
         end,
+    },
+    {
+        -- Which-key Extension
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  },
+  keys = {
+    {
+      "<leader>/",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+        },
+        },
     },
 }

@@ -30,5 +30,5 @@ map("n", "<leader>bp", ":BufferLinePick<CR>", opts) -- Pick a buffer to switch t
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opts) -- Pick a buffer to close
 
 -- ToggleTerm
-map("n", "<C-\\>", ":ToggleTerm<CR>", opts) -- Toggle terminal
-map("t", "<C-\\>", [[<C-\><C-n>:ToggleTerm<CR>]], opts) -- Toggle terminal in terminal mode
+-- map("n", "<C-\\>", ":ToggleTerm<CR>", opts) -- Toggle terminal
+-- map("t", "<C-\\>", [[<C-\><C-n>:ToggleTerm<CR>]], opts) -- Toggle terminal in terminal mode

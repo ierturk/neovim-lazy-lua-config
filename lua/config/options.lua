@@ -34,7 +34,9 @@ opt.splitright = true      -- Open vertical splits to the right
 opt.splitbelow = true      -- Open horizontal splits below
 
 -- Clipboard
-opt.clipboard = "unnamedplus" -- Use system clipboard
+-- opt.clipboard = "unnamedplus" -- Use system clipboard
 
 -- Autocompletion settings
 opt.completeopt = { "menu", "menuone", "noselect", "popup" } -- Required for CopilotChat.nvim
+
+vim.g.clipboard = 'osc52' -- Use the system clipboard for copy/paste
