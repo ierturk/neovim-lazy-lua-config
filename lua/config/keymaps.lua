@@ -38,3 +38,5 @@ map("n", "<leader>lg", ":LazyGit<CR>", opts) -- Open LazyGit
 -- map("t", "<leader>tt", [[<C-\><C-n>:ToggleTerm<CR>]], opts) -- Toggle terminal in terminal modei
 -- vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal
 -- vim.keymap.set("t", "<C-t>", ":ToggleTerm<CR>", { noremap = true, silent = true }) -- Toggle terminal
+
+vim.keymap.set("n", "<leader>qf", ":Telescope quickfix<CR>", { desc = "Search Quickfix List" })
