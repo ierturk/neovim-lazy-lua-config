@@ -69,7 +69,7 @@ return {
             filter = function(buf)
                 return vim.b[buf].neo_tree_source == "git_status"
             end,
-            -- pinned = true,
+            pinned = true,
             collapsed = true, -- show window as closed/collapsed on start
             open = "Neotree position=right git_status",
         },
@@ -79,7 +79,7 @@ return {
             filter = function(buf)
                 return vim.b[buf].neo_tree_source == "buffers"
             end,
-            -- pinned = true,
+            pinned = true,
             collapsed = true, -- show window as closed/collapsed on start
             open = "Neotree position=top buffers",
         },
@@ -89,7 +89,7 @@ return {
                     return vim.fn.fnamemodify(buf_name, ":t")
                 end,
             ft = "Outline",
-            -- pinned = true,
+            pinned = true,
             collapsed = true,
             open = "SymbolsOutlineOpen",
         },
