@@ -21,4 +21,5 @@ require("lazy").setup({
     require("config.plugins.lazygit"),
     require("config.plugins.tree"),
     require("config.plugins.dap"),
+    require("config.plugins.bqf"),
 })
