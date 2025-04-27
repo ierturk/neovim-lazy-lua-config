@@ -89,5 +89,13 @@ return {
       -- any other neo-tree windows
       "neo-tree",
     },
+    right = {
+      -- Add Copilot Chat to the right layout
+      {
+        ft = "copilot-chat",
+        title = "Copilot Chat",
+        size = { width = 50 }, -- Set width for Copilot Chat
+      },
+    },
   },
 }

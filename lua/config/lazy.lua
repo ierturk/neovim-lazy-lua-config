@@ -22,8 +22,9 @@ require("lazy").setup({
 
     -- ui config
     -- require("config.plugins.tokyonight"),
-    require("config.plugins.onedark"),
+    -- require("config.plugins.onedark"),
     -- require("config.plugins.onedarkpro"),
+    require("config.plugins.catpuccin"),
     require("config.plugins.bufferline"),
     require("config.plugins.lualine"),
     require("config.plugins.symbols-outline"),

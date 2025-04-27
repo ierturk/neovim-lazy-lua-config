@@ -1,16 +1,17 @@
 return {
   "akinsho/bufferline.nvim",
   version = "*",
-  dependencies = "nvim-tree/nvim-web-devicons",
+  dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
   config = function()
     require("bufferline").setup({
+      highlights = require("catppuccin.groups.integrations.bufferline").get(), -- Use Catppuccin highlights
       options = {
         offsets = {
           {
             filetype = "neo-tree", -- Offset bufferline for Neo-tree
             text = "File Explorer", -- Text to display in the offset
             text_align = "center", -- Align the text in the center
-            separator = true,      -- Show a separator between Neo-tree and bufferline
+            separator = true, -- Show a separator between Neo-tree and bufferline
           },
         },
         separator_style = "slant", -- Style of separators between buffers
