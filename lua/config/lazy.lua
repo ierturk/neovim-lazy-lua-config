@@ -44,6 +44,9 @@ require("lazy").setup({
     -- debug tools
     require("config.plugins.nvim-dap"),
     require("config.plugins.nvim-bqf"),
+    require("config.plugins.trouble"),
+    require("config.plugins.cmake-tools"),
+
 
     -- git tools
     require("config.plugins.lazygit"),

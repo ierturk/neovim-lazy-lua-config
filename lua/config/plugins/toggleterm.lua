@@ -10,7 +10,7 @@ return {
                 border = "curved", -- Border style for floating terminal
                 width = 120,
                 height = 40,
-                winblend = 0, -- Transparency
+                winblend = 5, -- Transparency
             },
         })
         
