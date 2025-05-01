@@ -13,7 +13,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local opts = {
+    rocks = {
+        enabled = true,
+        hererocks = false,
+    },
+    
+}
+
+local plugins = {
     -- tools
     require("config.plugins.which-key"),
     require("config.plugins.nvim-cmp"),
@@ -51,4 +59,6 @@ require("lazy").setup({
     -- git tools
     require("config.plugins.lazygit"),
     require("config.plugins.gitsigns"),
-})
+}
+
+require("lazy").setup(plugins, opts)

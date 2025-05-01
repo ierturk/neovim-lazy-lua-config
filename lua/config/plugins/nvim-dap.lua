@@ -13,7 +13,7 @@ return {
             -- Configure LLDB adapter
             dap.adapters.lldb = {
                 type = "executable",
-                command = "/usr/local/bin/lldb-vscode17", -- Replace with the full path to lldb-vscode17
+                command = "/usr/local/bin/lldb-dap18", -- Replace with the full path to lldb-vscode17
                 name = "lldb",
             }
 
