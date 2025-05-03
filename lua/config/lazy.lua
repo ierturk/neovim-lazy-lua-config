@@ -13,6 +13,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Set LuaRocks paths
+local luarocks_path = "/home/me/.luarocks"
+package.path = luarocks_path .. "/share/lua/5.1/?.lua;" .. luarocks_path .. "/share/lua/5.1/?/init.lua;" .. package.path
+package.cpath = luarocks_path .. "/lib/lua/5.1/?.so;" .. package.cpath
+
 local opts = {
     rocks = {
         enabled = true,
@@ -27,6 +32,7 @@ local plugins = {
     require("config.plugins.nvim-cmp"),
     require("config.plugins.vim-tmux-navigator"),
     require("config.plugins.telescope"),
+    require("config.plugins.fzf-lua"),
 
     -- ui config
     -- require("config.plugins.tokyonight"),
